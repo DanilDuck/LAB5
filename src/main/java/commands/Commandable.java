@@ -1,0 +1,33 @@
+package commands;
+
+public interface Commandable {
+    /**
+     * adds command
+     * @param key command name
+     * @param cmd command callback
+     */
+    public void addCommand(String key, Command cmd);
+
+    /**
+     * executes command with argument
+     * @param key command name
+     * @param arg
+     */
+    public void runCommand(String key, String arg);
+    /**
+     * checks if a command exists
+     * @param s
+     */
+    public boolean hasCommand(String s);
+
+    /**
+     * runs in command interpreter in console
+     */
+    public void consoleMode();
+
+    /**
+     * executes script from file
+     * @param path
+     */
+    public void fileMode(String path);
+}
