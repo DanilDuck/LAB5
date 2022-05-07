@@ -12,6 +12,7 @@ public class FileManager implements ReaderWriter {
      * Constructor, just save variable for all class.
      * @param pth Path to collection file.
      */
+    public FileManager(){}
     public FileManager(String pth) {
         path = pth;
     }

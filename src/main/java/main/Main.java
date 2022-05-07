@@ -10,14 +10,21 @@ import io.InputManager;
 
 import java.io.UnsupportedEncodingException;
 /**
- * @author Danil
+ * @author Daniil
  * @version 1.1
  *
  */
 public class Main {
     public static void main(String[] args) throws UnsupportedEncodingException {
-        FileManager fileManager = new FileManager("C:\\Users\\imia\\IdeaProjects\\file.json");
+        FileManager fileManager = new FileManager();
         PersonCollectionManager collectionManager = new PersonCollectionManager();
+        if(args.length !=0){
+            fileManager.setPath(args[0]);
+            collectionManager.deserializeCollection(fileManager.read());
+        }
+        else{
+            System.out.println("no file passed by argument");
+        }
         InputManager consoleManager = new ConsoleInputManager();
         CommandManager commandManager = new CommandManager(collectionManager,consoleManager,fileManager);
         commandManager.consoleMode();

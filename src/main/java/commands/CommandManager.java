@@ -104,7 +104,7 @@ public class CommandManager implements Commandable {
             try {
                 if(!fileManager.write(collectionManager.serializeCollection())) throw new CommandException("cannot save collection");
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new InvalidCommandArgumentException("Create path");
             }
 
         });
